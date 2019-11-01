@@ -1,0 +1,32 @@
+
+    <div class="uk-grid uk-margin-small-top">
+            
+            <table *ngIf="musics$"> 
+                    <thead>
+                       
+                        <th>Nome</th>
+                        <th>Genero</th>
+                        <th>Autores</th>
+                        <th>Editar</th>
+                        <th>Apagar</th>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let music of musics$.data">
+                       
+                                <td>{{music.name}}</td>
+                                <td>{{music.genre}}</td>
+                                <td>
+                                    <button routerLink="/musicauthor/{{music.id}}"><i class="fas fa-users"></i></button>
+                                </td>
+                                <td>
+                                    <button routerLink="/updatemusic/{{music.id}}"><i class="far fa-edit"></i></button>
+                                </td>    
+                                <td><button routerLink="/deletemusic/{{music.id}}"><i class="far fa-trash-alt"></i></button>
+                                </td>
+                        </tr>
+                       
+                    </tbody>
+                </table>
+    </div>
+
+
