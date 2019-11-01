@@ -19,28 +19,26 @@ export class MusicsComponent implements OnInit {
 
   ngOnInit() {
     this.musics$ = this.dataservice.getMusics();
+    let success: string;
+
+    this.musics$.subscribe(
+      res =>  success = String(res.success) 
+    );
    
-
-    this.musics$.subscribe(
-      res =>  this.sucess = res.success
-    );
-    this.musics$.subscribe(
-      res =>  this.musics = res.data
-    );
-    if(this.msg == ""){
-      this.msg = "vazio";
-    }
-    if(sucess)
+    
+    if(success = "true")
     {
-     
-     // this.musics = [];
-
-      this.musics.push(new  Music("0001","001","Musica1","pop"));
-      this.musics.push(new  Music("0002","002","Musica2","samba"));
-    }
+      this.musics$.subscribe(
+        res =>  this.musics = res.data
+      );
+    } 
      else
      {
       
+      this.musics$.subscribe(
+        res =>  this.msg = res.message
+      );
+     
     }
   
   }

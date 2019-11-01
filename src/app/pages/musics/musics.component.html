@@ -2,7 +2,7 @@
         <div class="uk-grid uk-margin-small-top">
     
             <table class="uk-table uk-table-striped uk-table-hover uk-table-divider" *ngIf="musics" >
-                    <caption></caption>
+                    <caption>Lista de Musicas</caption>
                     <thead>
                         <tr>
                             <th>Nome</th>
@@ -18,12 +18,15 @@
                                     <td>{{music.name}}</td>
                                     <td>{{music.genre}}</td>
                                     <td>
-                                        <button routerLink="/musicauthor/{{music.id}}"><i class="fas fa-users"></i></button>
+                                        <button class="uk-button uk-button-large uk-button-primary uk-margin-small-bottom" 
+                                        routerLink="/musicauthor/{{music.id}}"><i class="fas fa-users"></i></button>
                                     </td>
                                     <td>
-                                        <button routerLink="/updatemusic/{{music.id}}"><i class="far fa-edit"></i></button>
+                                        <button class="uk-button uk-button-large uk-button-primary uk-margin-small-bottom"
+                                         routerLink="/updatemusic/{{music.id}}"><i class="far fa-edit"></i></button>
                                     </td>    
-                                    <td><button routerLink="/deletemusic/{{music.id}}"><i class="far fa-trash-alt"></i></button>
+                                    <td><button class="uk-button uk-button-large uk-button-primary uk-margin-small-bottom" 
+                                        routerLink="/deletemusic/{{music.id}}"><i class="far fa-trash-alt"></i></button>
                                     </td>
                             </tr>
                     </tbody>
