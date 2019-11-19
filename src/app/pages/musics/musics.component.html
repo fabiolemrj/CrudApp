@@ -8,8 +8,11 @@
                             <th>Nome</th>
                             <th>Genero</th>
                             <th>Autores</th>
-                            <th>Editar</th>
-                            <th>Apagar</th>
+                            <th>
+                                          <button class="uk-button uk-button-default uk-button-primary uk-margin-small-bottom" 
+                                          routerLink="/musicauthor"><i class="fas fa-plus-square"></i> Add</button>
+                            </th>
+                           
                         </tr>
                     </thead>                   
                     <tbody>
@@ -18,19 +21,21 @@
                                     <td>{{music.name}}</td>
                                     <td>{{music.genre}}</td>
                                     <td>
-                                        <button class="uk-button uk-button-large uk-button-primary uk-margin-small-bottom" 
+                                        <button class="uk-button uk-button-small uk-button-primary uk-margin-small-bottom" 
                                         routerLink="/musicauthor/{{music.id}}"><i class="fas fa-users"></i></button>
                                     </td>
                                     <td>
-                                        <button class="uk-button uk-button-large uk-button-primary uk-margin-small-bottom"
+                                        <button class="uk-button uk-button-small uk-button-primary uk-margin-small-bottom"
                                          routerLink="/updatemusic/{{music.id}}"><i class="far fa-edit"></i></button>
+                                         <button class="uk-button uk-button-small uk-button-primary uk-margin-small-bottom"
+                                         routerLink="/deletemusic/{{music.id}}"><i class="fas fa-trash-alt"></i></button>
+                                         
                                     </td>    
-                                    <td><button class="uk-button uk-button-large uk-button-primary uk-margin-small-bottom" 
-                                        routerLink="/deletemusic/{{music.id}}"><i class="far fa-trash-alt"></i></button>
+                                    <td>
+                                            
                                     </td>
                             </tr>
-                    </tbody>
-          
+                    </tbody>          
             </table>
           
                 <div *ngIf="!musics">

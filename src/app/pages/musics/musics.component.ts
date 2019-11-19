@@ -13,35 +13,28 @@ export class MusicsComponent implements OnInit {
   public musics$: Observable<RespMusic> = null;
   public musics: Music[] = null;
   public msg : string;
-  public sucess: boolean;
+  public sucess: string;
 
   constructor(private dataservice: DataService) { }
 
   ngOnInit() {
-    this.musics$ = this.dataservice.getMusics();
-    let success: string;
+  
+  
+    this.loadMusic();
+  }
+
+loadMusic(){
+  this.musics$ = this.dataservice.getMusics();
+    
+    this.musics$.subscribe(
+      res =>  this.sucess = String(res.success)
+    );
+
 
     this.musics$.subscribe(
-      res =>  success = String(res.success) 
+      res =>  this.musics = res.data
     );
-   
-    
-    if(success = "true")
-    {
-      this.musics$.subscribe(
-        res =>  this.musics = res.data
-      );
-    } 
-     else
-     {
-      
-      this.musics$.subscribe(
-        res =>  this.msg = res.message
-      );
-     
-    }
-  
-  }
+}
 
 
 }

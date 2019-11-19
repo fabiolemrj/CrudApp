@@ -9,6 +9,7 @@ import { NavbarComponent } from './shared/navbar/navbar.component';
 import { MainComponent } from './shared/main/main.component';
 import { DataService } from './services/data.service';
 import { MusicsComponent } from './pages/musics/musics.component';
+import { MusicComponent } from './pages/music/music/music.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { MusicsComponent } from './pages/musics/musics.component';
     FramepageComponent,
     NavbarComponent,
     MainComponent,
-    MusicsComponent
+    MusicsComponent,
+    MusicComponent
   ],
   imports: [
     BrowserModule,

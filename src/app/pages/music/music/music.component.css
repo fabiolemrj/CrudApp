@@ -1,0 +1,17 @@
+.uk-button-blue {
+    background-color: rgb(29, 140, 252);
+    color: #fff;
+    border: 1px solid transparent;
+  }
+  /* Hover + Focus */
+  .uk-button-blue:hover,
+  .uk-button-blue:focus {
+    background-color: rgb(47, 132, 216);
+    color: #fff;
+  }
+  /* OnClick + Active */
+  .uk-button-blue:active,
+  .uk-button-blue.uk-active {
+    background-color: rgb(49, 134, 219);
+    color: #fff;
+  }
